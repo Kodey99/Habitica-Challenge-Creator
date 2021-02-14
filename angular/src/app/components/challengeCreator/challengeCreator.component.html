@@ -1,0 +1,50 @@
+<style>
+  .tab { 
+    display:inline-block; 
+    margin-left: 20px; }
+</style>
+
+<br>
+<p>Insert your Habitica User ID and API Token. These can be found at <a href="https://habitica.com/user/settings/api">Habitica API Settings</a>
+</p>
+<div>
+  <p>
+    Habitica User Id: <input type="text" name="id" #id>
+    <span class="tab">API Token: <input type="text" name="token" #token></span>
+    <span class="tab"><button class="btn btn-success btn-sm" (click)="addDetails(id.value, token.value)"> Add Habitica Details </button></span>
+  </p>
+  <div *ngIf="apiToken && userId" class="alert alert-secondary" role="alert">
+    Habitica API Details Added Successfully
+  </div>
+</div>
+
+<hr><br>
+<p>Select the challenge file to upload.</p>
+<div class="row">
+  <div class="col-8">
+    <label class="btn btn-default p-0">
+      <input type="file" (change)="selectFile($event)" />
+    </label>
+  </div>
+
+  <div class="col-4">
+    <button class="btn btn-success btn-sm" [disabled]="!selectedFiles" (click)="upload()">
+      Create Challenge
+    </button>
+  </div>
+</div>
+
+<div *ngIf="currentFile">
+  <div
+    class="progress-bar progress-bar-info progress-bar-striped"
+    role="progressbar"
+    attr.aria-valuenow="{{ progress }}"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    [ngStyle]="{ width: progress + '%' }"
+  >
+    {{ progress }}%
+  </div>
+</div>
+
+<div *ngIf="message" class="alert alert-secondary" role="alert">{{ message }}</div>

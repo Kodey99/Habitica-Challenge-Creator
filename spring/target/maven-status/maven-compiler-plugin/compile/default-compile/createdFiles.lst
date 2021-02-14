@@ -1,0 +1,12 @@
+com\kodey\challengeCreator\model\Challenge.class
+com\kodey\challengeCreator\model\Difficulty$1.class
+com\kodey\challengeCreator\model\Difficulty.class
+com\kodey\challengeCreator\utilities\HTTPRequests.class
+com\kodey\challengeCreator\service\ChallengeService.class
+com\kodey\challengeCreator\model\ToDo.class
+com\kodey\challengeCreator\model\Reward.class
+com\kodey\challengeCreator\model\Task.class
+com\kodey\challengeCreator\model\Daily.class
+com\kodey\challengeCreator\ChallengeCreator.class
+com\kodey\challengeCreator\controller\ChallengeController.class
+com\kodey\challengeCreator\model\Habit.class
